@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="mvclaimformModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="8.0" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="form_base">
+          <Key>
+            <PropertyRef Name="ClaimBillNo" />
+          </Key>
+          <Property Name="ClaimBillNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PolicyNo" Type="int" />
+          <Property Name="PoExpDate" Type="date" />
+          <Property Name="ClientName" Type="varchar" MaxLength="50" />
+          <Property Name="Address" Type="varchar" MaxLength="100" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+          <Property Name="Pincode" Type="int" />
+          <Property Name="Mobile" Type="int" />
+          <Property Name="CompName" Type="varchar" MaxLength="50" />
+          <Property Name="Model" Type="varchar" MaxLength="50" />
+          <Property Name="SerialNo" Type="int" />
+          <Property Name="YearOfPurchase" Type="int" />
+          <Property Name="PurchaseFrom" Type="varchar" MaxLength="50" />
+          <Property Name="PurchaseBillNo" Type="int" />
+          <Property Name="DateOfIncident" Type="date" />
+          <Property Name="IncidentAdd" Type="varchar" MaxLength="100" />
+          <Property Name="Incidentinfo" Type="varchar" MaxLength="200" />
+          <Property Name="FirDate" Type="date" />
+          <Property Name="PoliceStation" Type="varchar" MaxLength="50" />
+          <Property Name="ClaimDate" Type="date" />
+          <Property Name="ClaimBy" Type="varchar" MaxLength="50" />
+          <Property Name="Claimamount" Type="int" />
+        </EntityType>
+        <EntityContainer Name="mvclaimformModelStoreContainer">
+          <EntitySet Name="form_base" EntityType="Self.form_base" Schema="mvclaimform" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="mvclaimformModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="form_base">
+          <Key>
+            <PropertyRef Name="ClaimBillNo" />
+          </Key>
+          <Property Name="ClaimBillNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PolicyNo" Type="Int32" />
+          <Property Name="PoExpDate" Type="DateTime" />
+          <Property Name="ClientName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Pincode" Type="Int32" />
+          <Property Name="Mobile" Type="Int32" />
+          <Property Name="CompName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SerialNo" Type="Int32" />
+          <Property Name="YearOfPurchase" Type="Int32" />
+          <Property Name="PurchaseFrom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PurchaseBillNo" Type="Int32" />
+          <Property Name="DateOfIncident" Type="DateTime" />
+          <Property Name="IncidentAdd" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Incidentinfo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="FirDate" Type="DateTime" />
+          <Property Name="PoliceStation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ClaimDate" Type="DateTime" />
+          <Property Name="ClaimBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Claimamount" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="mvclaimformEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="form_base" EntityType="Self.form_base" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="mvclaimformModelStoreContainer" CdmEntityContainer="mvclaimformEntities">
+          <EntitySetMapping Name="form_base">
+            <EntityTypeMapping TypeName="mvclaimformModel.form_base">
+              <MappingFragment StoreEntitySet="form_base">
+                <ScalarProperty Name="ClaimBillNo" ColumnName="ClaimBillNo" />
+                <ScalarProperty Name="PolicyNo" ColumnName="PolicyNo" />
+                <ScalarProperty Name="PoExpDate" ColumnName="PoExpDate" />
+                <ScalarProperty Name="ClientName" ColumnName="ClientName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Pincode" ColumnName="Pincode" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="CompName" ColumnName="CompName" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+                <ScalarProperty Name="YearOfPurchase" ColumnName="YearOfPurchase" />
+                <ScalarProperty Name="PurchaseFrom" ColumnName="PurchaseFrom" />
+                <ScalarProperty Name="PurchaseBillNo" ColumnName="PurchaseBillNo" />
+                <ScalarProperty Name="DateOfIncident" ColumnName="DateOfIncident" />
+                <ScalarProperty Name="IncidentAdd" ColumnName="IncidentAdd" />
+                <ScalarProperty Name="Incidentinfo" ColumnName="Incidentinfo" />
+                <ScalarProperty Name="FirDate" ColumnName="FirDate" />
+                <ScalarProperty Name="PoliceStation" ColumnName="PoliceStation" />
+                <ScalarProperty Name="ClaimDate" ColumnName="ClaimDate" />
+                <ScalarProperty Name="ClaimBy" ColumnName="ClaimBy" />
+                <ScalarProperty Name="Claimamount" ColumnName="Claimamount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,21 @@
+﻿@model ClaimForm.Models.form_base
+@{
+    ViewBag.Title = "GetClient";
+}
+<link href="~/Content/StyleError.css" rel="stylesheet" />
+<div class="Search-head col-md-12">
+    <h2 class="">Get a claim form</h2>
+</div>
+@using (Html.BeginForm())
+{
+    <div class="row Search-holder">
+        <div class="col-md-7 col-md-offset-1 Search-bar">
+            <input value="id" type="number" name="id" class="col-md-12" placeholder="Enter the Claim Bill ID" required/>
+            @*@Html.Editor("id", new { @class= "Search-bar col-md-8" })*@
+        </div>
+        <div class="col-md-3 red Search-submit text-center">
+            <i class="glyphicon glyphicon-search white"></i>
+            <input id="Submit" type="submit" value="Search" class=" "/>
+        </div>
+    </div>
+}

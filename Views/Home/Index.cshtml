@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="container">
+    <div class="row Home-holder">
+        <div class="col-md-4 text-center">
+            @if (User.IsInRole("admin"))
+            {
+            <a href="/Form/GetClient">
+                <div class="Home-bar">
+                    <img src="~/Images/Search.svg" height="250" />
+                </div>
+                <div class="Home-menu-head">
+                    @Html.ActionLink("Search Client", "GetClient", "Form")
+                </div>
+            </a>
+            }
+        </div>
+        <div class="col-md-4 text-center ">
+            <a href="/Form/Create">
+                <div class="Home-bar">
+                    <img src="~/Images/car-money.png" height="250" />
+                </div>
+                <div class=" Home-menu-head">
+                    @Html.ActionLink("Fill a claim form", "Create", "Form")
+                </div>
+            </a>
+        </div>
+        
+        <div class="col-md-4 text-center">
+            @if (User.IsInRole("admin"))
+            {
+            <a href="/Form/Index">
+                <div class="Home-bar">
+                    <img src="~/Images/List.svg" height="250" />
+                </div>
+                <div class="Home-menu-head ">
+                    @Html.ActionLink("List all claims", "Index", "Form")
+                </div>
+            </a>
+            }
+        </div>
+    </div>
+</div>

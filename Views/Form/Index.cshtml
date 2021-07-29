@@ -1,0 +1,73 @@
+﻿@model IEnumerable<ClaimForm.Models.form_base>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>All Claims</h2>
+<br />
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ClaimBillNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClientName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mobile)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CompName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Model)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClaimDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Claimamount)
+        </th>
+        <th>Actions</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClaimBillNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClientName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.City)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mobile)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Model)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.ClaimDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Claimamount)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ClaimBillNo }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ClaimBillNo }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ClaimBillNo })
+        </td>
+    </tr>
+}
+
+</table>
